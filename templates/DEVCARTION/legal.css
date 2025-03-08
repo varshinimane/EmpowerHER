@@ -1,0 +1,104 @@
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  background-color: white;
+  color: black;
+  background-size: 100%;
+  background-image:url("footer_bg.jpg");
+
+}
+
+header {
+  background-color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 25px;
+  color: black;
+  font-weight: 400;
+  font-weight: bolder;
+}
+
+main {
+  padding: 20px;
+}
+
+/* Accordion Styles */
+.accordion-item {
+  border: 1px solid black;
+  margin-bottom: 20px;
+  background-color: white;
+}
+
+.accordion-title {
+  background-color: lavender;
+  padding: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #b38add;
+  color: white;
+}
+
+.accordion-content {
+  padding: 10px;
+  display: none;
+}
+
+.accordion-content ul {
+  list-style-type: none; /* Removing the default list style */
+}
+
+.accordion-content ul li {
+  padding-left: 20px; /* Add left padding to align text with the circle */
+  position: relative; /* Position the bullet relative to the list item */
+}
+
+.accordion-content ul li::before {
+  content: "•"; /* Adding black circle bullet */
+  color: black; /* Setting the color of the bullet */
+  position: absolute; /* Position the bullet */
+  left: 0; /* Adjust bullet position */
+}
+
+/* Icon styles */
+.fas {
+  margin-right: 10px;
+}
+
+/* Show content when accordion title is clicked */
+.active {
+  display: block;
+}
+/* Adjust the filter container */
+/* Filter container styles */
+.filter-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+/* Filter button styles */
+.filter-container select {
+  padding: 10px; /* Add padding for better spacing */
+  font-size: 16px; /* Adjust font size */
+  border: none; /* Remove border */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  background-color: #b38add; /* Change background color */
+  color: white; /* Change text color */
+  cursor: pointer; /* Add pointer cursor */
+  appearance: none; /* Remove default appearance */
+}
+
+/* Hover effect for filter button */
+.filter-container select:hover {
+  background-color: #8a63a9; /* Darken background color on hover */
+}

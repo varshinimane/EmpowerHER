@@ -1,0 +1,56 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 900px;
+}
+
+.card-columns .card {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-columns .card-body {
+    padding: 20px;
+}
+
+.card-columns .card-title {
+    color: #333;
+}
+
+.card-columns .card-text {
+    color: #666;
+}
+
+.card-columns .card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+.card-columns .text-muted {
+    font-size: 14px;
+}
+
+.card-columns .btn-primary {
+    background-color: #6c5ce7;
+    border: none;
+}
+
+.card-columns .btn-primary:hover {
+    background-color: #4a3f9a;
+}
+
+.card-columns .form-control-file {
+    overflow: hidden;
+}
+
+/* Styling for the file input */
+input[type="file"] {
+    height: calc(1.5em + 1rem + 2px);
+    padding: .5rem .75rem;
+}

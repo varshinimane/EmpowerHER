@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.10.2/fullcalendar.min.js"></script>
+    <title>Period Tracker Calendar</title>
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f9fa;
+      }
+
+
+      main {
+        max-width: 90%;
+        margin: 20px auto;
+        background-image: url("pt.jpg"); /* Replace 'your-background-image-url.jpg' with the URL of your background image */
+        background-size: cover; /* Ensure the background image covers the entire container */
+        background-position: center; /* Center the background image */
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        text-align: center;
+      }
+
+
+      h2 {
+        color: #ffffff;
+        margin-bottom: 20px;
+      }
+
+
+      #calendar {
+        width: 100%;
+        max-width: 600px; /* Set maximum width for the calendar */
+        margin: 0 auto;
+        border: 2px solid rgb(255, 255, 255);
+        border-radius: 8px;
+      }
+
+
+      .fc-toolbar .fc-center h2 {
+        font-size: 1.2em;
+      }
+
+
+      .fc-toolbar button {
+        font-size: 0.8em;
+        padding: 0.2em 0.5em;
+      }
+
+
+      .fc-day {
+        width: 2em;
+        height: 2em;
+        font-size: 0.8em;
+        border: 1px solid rgb(253, 253, 253);
+        box-sizing: border-box;
+        background-color: white;
+        padding: 5px;
+        position: relative;
+      }
+
+
+        .color {
+          color: white;
+        }
+.notification-box {
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #484291;
+  color: white;/* Changed text color to black */
+  padding: 2px 5px;
+  font-size: 10px;
+  border-radius: 3px;
+}
+
+
+
+
+      #inputbox {
+        margin-top: 20px;
+      }
+
+
+      button {
+        padding: 10px;
+        background-color: #ffffff; /* Change button color to purple */
+        color: #4d1d99;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+
+
+      .input-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+
+      .input-container label {
+        margin-right: 10px;
+      }
+
+
+      .input-container input {
+        padding: 8px;
+        border: 1px solid #ced4da;
+        border-radius: 4px;
+      }
+
+
+      /* Change background color of the row containing days of the week to white */
+      .fc-widget-header {
+        background-color: white;
+
+
+      }
+    </style>
+  </head>
+  <body>
+    <main id="me">
+      <section>
+        <h2>Period Tracker Calendar</h2>
+        <div id="calendar"></div>
+        <div id="inputbox">
+          <div class="input-container">
+         <label for="startPeriodDate" class="color" >Choose start period date:</label>
+            <input type="date" id="startPeriodDate" name="startPeriodDate" />
+          </div>
+          <button id="trackButton">Track</button>
+        </div>
+      </section>
+    </main>
+
+
+    <script>
+      $(document).ready(function () {
+        initializeCalendar();
+      });
+
+
+      function initializeCalendar() {
+        $("#calendar").fullCalendar({
+          header: {
+            left: "prev",
+            center: "title",
+            right: "next",
+          },
+          events: [],
+          viewRender: function (view, element) {
+            if (view.name === "month") {
+              $(".fc-day-header").css("background-color", "#28a745");
+            } else {
+              $(".fc-day-header").css("background-color", "initial");
+            }
+          },
+          dayRender: function (date, cell) {
+            var today = moment().format("YYYY-MM-DD");
+            if (date.format("YYYY-MM-DD") === today) {
+              cell.css("background-color", "initial");
+            }
+          },
+          dayClick: function (date, jsEvent, view) {
+            displayEventDetails(date.format());
+          },
+        });
+
+
+        $("#trackButton").on("click", function () {
+          var startPeriodDate = moment($("#startPeriodDate").val());
+          var dueDate = startPeriodDate.clone().add(1, "month");
+
+
+          // Clear existing notifications
+          $(".notification-box").remove();
+
+
+          // Add new notifications for predicted due date and range
+          for (let i = -2; i <= 2; i++) {
+            var predictedDate = dueDate.clone().add(i, "days");
+            var cell = $(
+              `.fc-day[data-date="${predictedDate.format("YYYY-MM-DD")}"]`
+            );
+            cell.append(
+              `<div class="notification-box">Predicted Due Date</div>`
+            );
+          }
+        });
+      }
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

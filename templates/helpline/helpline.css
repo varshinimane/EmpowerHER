@@ -1,0 +1,68 @@
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-image: url('footer_bg.jpg');
+           background-attachment: fixed; /* Replace 'background.jpg' with your image file */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: white;
+        }
+
+     header {
+  background-color: rgb(141, 123, 109); /* Purple header background with transparency */
+  background-size: 50px;
+  color: white;
+  width: 600px;
+  padding: 3px; /* Reduced padding */
+  font-size: 24px; /* Reduced font size */
+  margin: 0 auto; /* Center align the box */
+  text-align: center; /* Center align text inside the box */
+}
+
+
+        main {
+            padding: 20px;
+            color: #333; /* Dark text color */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+
+        th, td {
+            padding: 8px 12px; /* Adjusted padding */
+            text-align: left;
+          
+            vertical-align: top;
+            background-color: rgba(198, 117, 255, 0.7); /* Shaded purple background with transparency */
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        th {
+            background-color: rgba(137, 16, 222, 0.5); /* Darker purple background for table headers */
+            margin: 20px 20px 20px 20px;
+        }
+
+        tr:hover {
+            transform: translateY(-5px); /* Move up slightly on hover */
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* Enhanced shadow effect */
+        }
+
+        td:first-child {
+            padding-right: 30px; /* Add horizontal space between Services and Contact */
+            margin: 20px 20px 20px 20px;
+        }
+
+        a {
+            color: #fff; /* White text color */
+            text-decoration: none;
+            font-weight: bold;
+        }
+    

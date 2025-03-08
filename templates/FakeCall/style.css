@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 50px;
+    background: #8d7b6d;
+}
+
+.container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: inline-block;
+}
+
+input, button {
+    margin: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    background: #484291;
+    color: white;
+    border-radius: 5px;
+}
+
+button.answer {
+    background: green;
+}
+
+button.decline {
+    background: red;
+}
+
+.hidden {
+    display: none;
+}
+
+#incoming-call, #active-call {
+    background: white;
+    padding: 20px;
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    border-radius: 10px;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purple Feed</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="feed/feed.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="feed" class="card-columns"></div>
+            </div>
+            <div class="col-md-4">
+                <form id="post-form" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Create a Post</h5>
+                        <div class="form-group">
+                            <input type="text" id="post-title" class="form-control" placeholder="Title">
+                        </div>
+                        <div class="form-group">
+                            <textarea id="post-content" class="form-control" placeholder="Content"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="post-image">Image</label>
+                            <input type="file" id="post-image" class="form-control-file">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Post</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase JavaScript SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js"></script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-database.js";
+        import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-analytics.js";
+// Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyBzyTEZiccmEUDIIDt5pE2FRxlFOJvHMZw",
+            authDomain: "empowerher-e2c15.firebaseapp.com",
+            projectId: "empowerher-e2c15",
+            storageBucket: "empowerher-e2c15.appspot.com",
+            messagingSenderId: "668731305542",
+            appId: "1:668731305542:web:9fcd44af6040fe0b832447",
+            measurementId: "G-WBEQ67JKRE"
+          };
+
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        const db = getDatabase();
+        const auth = getAuth(app);
+
+        const postTitle = document.getElementById('post-title');
+        const postContent = document.getElementById('post-content');
+        const postImage = document.getElementById('post-image');
+    
+        const mainForm = document.getElementById('MainForm');
+
+        const post_user = evt => {
+            evt.preventDefault();
+            createUserWithEmailAndPassword(auth, emailInp.value, passwordInp.value)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    // Storing user data in the Realtime Database
+                    set(ref(db, 'feed/' + user.uid), {
+                        firstname: fnameInp.value,
+                        lastname: lnameInp.value,
+                        email: emailInp.value
+                    })
+                    .then(() => {
+                        alert("User created successfully!");
+                        mainForm.reset(); // Reset the form after successful registration
+                    })
+                    .catch(error => {
+                        console.error("Error storing user data:", error);
+                        alert("An error occurred while storing user data. Please try again later.");
+                    });
+                })
+                .catch(error => {
+                    console.error("Error creating user:", error);
+                    alert(error.message);
+                });
+        }
+
+        mainForm.addEventListener('submit', post_user);
+    </script>
+</body>
+</html>

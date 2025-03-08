@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Fake Call</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>Schedule a Fake Call</h2>
+        <label for="caller-name">Caller Name:</label>
+        <input type="text" id="caller-name" placeholder="Enter caller name">
+        
+        <label for="call-delay">Call in (seconds):</label>
+        <input type="number" id="call-delay" min="1" placeholder="Enter delay">
+
+        <button onclick="scheduleFakeCall()">Schedule Call</button>
+    </div>
+
+    <div id="incoming-call" class="hidden">
+        <div class="call-screen">
+            <h2 id="fake-caller">Unknown Caller</h2>
+            <p>Incoming Call...</p>
+            <audio id="fake-ringtone" src="ringtone.mp3" loop></audio>
+            <button class="answer" onclick="answerCall()">Answer</button>
+            <button class="decline" onclick="declineCall()">Decline</button>
+        </div>
+    </div>
+
+    <div id="active-call" class="hidden">
+        <p>Fake Call Ongoing...</p>
+        <audio id="fake-voice" src="fake-con.mp3"></audio>
+        <button onclick="endCall()">End Call</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

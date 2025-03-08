@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: lavender;
+        margin: 0;
+      }
+
+      .contact-form-container {
+        background-image: url("resbg.jpg"); /* Specify the path to your background image */
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .contact-form {
+        background-color: rgba(
+          171,
+          85,
+          218,
+          0.8
+        ); /* Changed to purple with transparency */
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        color: white; /* Text color changed to white */
+      }
+
+      .contact-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+
+      .contact-form input[type="text"],
+      .contact-form input[type="email"],
+      .contact-form input[type="tel"],
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+        font-size: 16px;
+        background-color: white;
+      }
+
+      .contact-form textarea {
+        height: 150px;
+      }
+
+      .contact-form button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: white;
+        color: purple;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      .contact-form button:hover {
+        background-color: #b38add;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contact-form-container">
+      <div class="contact-form">
+        <h2>Contact Us</h2>
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input
+            type="hidden"
+            name="access_key"
+            value="30ed0e96-1555-4ea1-8c54-c4694762aee0"
+          />
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input
+            type="email"
+            name="email"
+            placeholder="Your Email"
+            pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+            title="Please enter a valid email address"
+            required
+          />
+
+          <input
+            type="tel"
+            name="phone"
+            placeholder="Your Phone Number"
+            pattern="[0-9]{10}"
+            title="Please enter a valid 10-digit phone number"
+            required
+          />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            required
+          ></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

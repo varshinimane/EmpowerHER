@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EmpowerHer</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://kit.fontawesome.com/12c8099da5.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Galada&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Galada&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+  <style>
+    .btn-purple {
+      background-color: #000000; /* Adjust the shade of purple as needed */
+      border-color: #000000; /* Adjust the border color if needed */
+  }
+  
+  .btn-purple:hover {
+      background-color: #000000; /* Adjust the hover color as needed */
+      border-color: #000000; /* Adjust the hover border color if needed */
+  }
+  
+/* Adjustments for responsiveness and styling */
+.display-3 {
+  font-size: 3rem; /* Increase heading size */
+}
+
+/* Reduce the size of the boxes */
+.gx-4 > [class*='col-'] {
+  padding-right: 8px; /* Adjust padding to reduce box size */
+  padding-left: 8px; /* Adjust padding to reduce box size */
+}
+
+@media (min-width: 576px) {
+  .display-3 {
+      font-size: 4rem; /* Increase heading size further for larger screens */
+  }
+
+  .gx-4 > [class*='col-'] {
+      padding-right: 6px; /* Adjust padding further to reduce box size */
+      padding-left: 6px; /* Adjust padding further to reduce box size */
+  }
+}
+
+
+
+    .carousel {
+      border: 10px solid rgb(0, 0, 0);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+    }
+    
+    .navbar {
+      background-image: url('images/about_back.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+  }
+
+  .navbar-brand img {
+      max-height: 50px; /* Set the maximum height of the logo image */
+      /* Add any additional styling for the logo image */
+  }
+      /* Custom Styles */
+      .background-section {
+        background-image: url('images/about_back.png'); /* Replace 'your-background-image.jpg' with the path to your background image */
+        background-size: cover;
+        background-position: center;
+        padding: 50px 0; /* Adjust padding as needed */
+        color: rgb(0, 0, 0); /* Text color on the background */
+      }
+      .lora-women {
+        font-family: "Lora", serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+      }
+      
+
+
+      .galada-regular {
+        font-family: "Galada", cursive;
+        font-weight: 400;
+        font-style: normal;
+        color: #000000;
+      }
+      
+      .navbar-brand {
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        color: #000000;
+    }
+    .navbar-nav .nav-link {
+        font-family: 'Arial', sans-serif;
+        color: #090505;
+    }
+    .nav-item {
+        border: 1px solid #000000;
+        border-radius: 5px;
+        margin: 0 10px;
+        padding: 1px 5px;
+    }
+    .navbar {
+        background-color: #8d7b6d;
+    }
+    body {
+        background-color: #8d7b6d; /* Light Purple Pink */
+    }
+    .navbar-collapse {
+        justify-content: flex-end;
+    }
+    .navbar-toggler {
+        border: none;
+    }
+    body {
+      background-color: #8d7b6d;
+      color: rgb(0, 0, 0);
+      font-family: Arial, sans-serif;
+    }
+    .white-space {
+      background-color: #8d7b6d;
+      height: 10px; /* Adjust height as needed */
+    }
+    .landing {
+      padding-bottom: 50px;
+    }
+    .landing .row {
+      align-items: center;
+    }
+    .landing .text-content {
+      padding-right: 50px;
+    }
+    .landing h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .landing p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .landing .text-content {
+        padding-right: 0;
+      }
+    }
+
+
+
+
+  </style>
+
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="images/logo.png" alt="EmpowerHer Logo" height="550" width="100">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active text-black" aria-current="page" href="#about">Home</a>
+              </li>
+              
+                  <li class="nav-item">
+                      <a class="nav-link" href="#Rise">Rise & Shine</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#services">How We Help</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="calender\index.html">My Planner</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="Chatbot/chat.html">Chatbot</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="menses.html">Period Tracker</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="helpline\helpline.html">Helpline</a>
+              </li>
+
+
+
+
+                  <li class="nav-item">
+                    <a class="nav-link" href="DEVCARTION\contact.html">Contact</a>
+                </li>
+
+              
+              </ul>
+              <!-- Login and Signup Symbols -->
+              <div class="d-flex">
+               
+
+               <button class="btn btn-link nav-link" type="button" id="signoutbutton">Log Out</button>
+
+              </div>
+              <!-- End of Login and Signup Symbols -->
+          </div>
+      </div>
+  </nav>
+
+<!-- Bootstrap Modal -->
+<!-- Bootstrap Modal -->
+<div class="modal fade" id="greetModal" tabindex="-1" aria-labelledby="greetModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: #8d7b6d;"> <!-- Change background color to a lighter shade of purple -->
+
+      <!-- Change text color to white -->
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+      <div class="modal-body">
+        <h5 class="modal-title text-center mb-4" id="greetModalLabel" style="color: #000000;">Welcome to EmpowerHer</h5> <!-- Change text color and font -->
+        <p id="greetMessage" class="text-center mb-4" style="color: #000000; font-family: 'Arial', sans-serif;">We're thrilled to have you join our community! At EmpowerHer, we strive to empower women around the world through support, education, and advocacy. Together, we can make a difference.</p> <!-- Change text color and font -->
+        <button type="button" class="btn btn-purple d-block mx-auto" data-bs-dismiss="modal">Get Started</button> <!-- Change button color to purple -->
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+  <section class="background-section">
+  <div id="home" class="container landing">
+    <div class="row">
+      <div class="col-md-8 order-md-first">
+      
+        <h2 id="msg"></h2>
+        <h2 class="galada-regular" id="greet"></h2>
+
+        <h1 class="galada-regular"> &nbsp &nbsp &nbsp "Helping Women Discover <br>&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp  &nbsp &nbsp their Wings"</h1>
+        <p>EmpowerHer is your go-to destination for women's empowerment, providing valuable resources for rights
+           awareness and skill development. Together, let's champion change and uplift women everywhere!</p>
+      </div>
+      <div class="col-md-4 order-md-last">
+        <!-- Replace the placeholder image with your desired image source -->
+        <img src="images\main2.png" class="img-fluid" height="300" width="300" alt="Your Image Description">
+      </div>
+    </div>
+  </div>
+  
+  </section>
+  
+
+
+</div>
+
+  <!-- White space -->
+  <div id="Rise" class="white-space"></div>
+  <div id="Rise" class="white-space"></div>
+  <div id="Rise" class="white-space"></div>
+  <div id="carouselExampleCaptions" class="carousel slide carousel" data-bs-ride="false">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="images/q1.jpg" class="w-100 h-9" alt="...">
+    <div class="carousel-caption d-none d-md-block">
+             
+               
+              </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images\q2.jpg" class="d-block w-100 h-20" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+               
+              
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="images\q3final.jpg" class="d-block w-100 h-20" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              
+             
+            </div>
+        </div>
+    </div>
+
+   
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div id="Rise" class="white-space"></div>
+<div id="Rise" class="white-space"></div>
+<div id="Rise" class="white-space"></div>
+
+
+   <!-- White space -->
+   <div class="white-space"></div>
+ 
+   <!-- Topic Text Box -->
+   <section class="py-20 pb-md-32" style="background-image: url('images/services_bg.jpg'); background-size: cover; background-position: center;">
+    <br>
+    <div class="container" id="services">
+        <div class="row mb-2 align-items-center"> <!-- Reduced mb-2 from mb-4 -->
+            <div class="col-12">
+                <h1 class="text-center text-purple nav-link display-3 mb-1">How We Help</h1> <!-- Reduced mb-2 from mb-4 -->
+            </div>
+        </div>
+        <div class="row gx-4 gy-4">
+            <div class="col-12 col-md-4 mb-4">
+                <div class="position-relative">
+                    <img class="d-block w-100 img-fluid rounded-4" src="images/pag2.jpg" alt="" style="height: 300px; object-fit: cover;">
+                    <div class="position-absolute bottom-0 start-0 w-100 h-25 p-3" style="background-color: rgba(255,255,255,0.7);">
+                        <div class="d-flex h-100 px-3 align-items-center justify-content-center py-3 rounded-1" style="backdrop-filter: blur(10px);">
+                            <a href="DEVCARTION\resources.html" style="background-color: #484291; border-color: black;" class="btn btn-primary ms-3">Upskill</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+                <div class="position-relative">
+                    <img class="d-block w-100 img-fluid rounded-4" src="images/legal.jpg" alt="" style="height: 300px; object-fit: cover;">
+                    <div class="position-absolute bottom-0 start-0 w-100 h-25 p-3" style="background-color: rgba(255,255,255,0.7);">
+                        <div class="d-flex h-100 px-3 align-items-center justify-content-center py-3 rounded-1" style="backdrop-filter: blur(10px);">
+                            <a href="DEVCARTION\legal.html" class="btn btn-primary ms-3" style="background-color: #484291; border-color: black;">Know Your Rights</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-4 mb-4">
+              <div class="position-relative">
+                  <img class="d-block w-100 img-fluid rounded-4" src="images/call.jpg" alt="" style="height: 300px; object-fit: cover;">
+                  <div class="position-absolute bottom-0 start-0 w-100 h-25 p-3" style="background-color: rgba(255,255,255,0.7);">
+                      <div class="d-flex h-100 px-3 align-items-center justify-content-center py-3 rounded-1" style="backdrop-filter: blur(10px);">
+                          <a href="FakeCall/call.html" class="btn btn-primary ms-3" style="background-color: #484291; border-color: black;">Emergency Fake Caller</a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        </div>
+    </div>
+</section>
+
+
+  
+<!-- Footer -->
+<footer class="text-center text-lg-start bg-body-tertiary text-black" style="background-image: url('images/footer_bg.jpg'); background-size: cover; background-position: center;">
+
+
+  <!-- Section: Links  -->
+  <section class="mt-5">
+      <div class="container text-center text-md-start">
+          <!-- Grid row -->
+          <div class="row mt-3">
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                  <!-- Content -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      <i class="fas fa-gem me-3"></i>Empower Her
+                  </h6>
+                  <p>
+                    "Join our community to empower women and create positive change. 
+                    Together, let's build a more inclusive and equitable world."  
+
+                  </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      Services
+                  </h6>
+                  <p>
+                      <a href="#!" class="text-reset">Upskill</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Know your rights</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Period calendar</a>
+                  </p>
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">
+                      Useful links
+                  </h6>
+                  <p>
+                      <a href="#!" class="text-reset">Helpline</a>
+                  </p>
+                  <p>
+                      <a href="#!" class="text-reset">Period tracker</a>
+                  </p>
+
+                  <p>
+                    <a href="#!" class="text-reset">Resources</a>
+                </p>
+                  <p>
+                      <a href="#!" class="text-reset">Contact</a>
+                  </p>
+                 
+              </div>
+              <!-- Grid column -->
+
+              <!-- Grid column -->
+              <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                  <!-- Links -->
+                  <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                  <p><i class="fas fa-home me-3"></i> Hyderabad, India, 500100</p>
+                  <p>
+                      <i class="fas fa-envelope me-3"></i>
+                      info@example.com
+                  </p>
+                  <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                  <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+              </div>
+              <!-- Grid column -->
+          </div>
+          <!-- Grid row -->
+      </div>
+  </section>
+  <!-- Section: Links -->
+</footer>
+
+
+
+  <!-- Bootstrap JS Bundle with Popper.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
+
+
+<script>
+   let UserCreds=JSON.parse(sessionStorage.getItem("user-creds"));
+   let UserInfo=JSON.parse(sessionStorage.getItem("user-info"));
+   
+   let MsgHead=document.getElementById("msg");
+   let GreetHead=document.getElementById("greet");
+   let SignoutBtn=document.getElementById("signoutbutton");
+
+  
+
+   let Signout=()=>{
+    sessionStorage.removeItem("user-creds");
+    sessionStorage.removeItem("user-info");
+    window.location.href='login.html';
+
+   }
+   let checkCred = () => {
+    if (!sessionStorage.getItem("user-creds"))
+      window.location.href = 'login.html';
+    else {
+     
+    }
+  }
+  
+   window.addEventListener('load', checkCred);
+   SignoutBtn.addEventListener("click", Signout);
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
