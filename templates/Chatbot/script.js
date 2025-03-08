@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const userInput = document.getElementById("user-input");
     const sendButton = document.getElementById("send-btn");
 
-    const GEMINI_API_KEY = "AIzaSyApEwqGMR-QWjYuRet991YivOE2zLS4-GY";  // Replace with your actual API key
+    const GEMINI_API_KEY = "YOUR-API-KEY";  // Replace with your actual API key
 
     sendButton.addEventListener("click", sendMessage);
     userInput.addEventListener("keypress", function (event) {
